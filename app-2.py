@@ -11,10 +11,29 @@ import pandas as pd
 # ---------------------
 # 页面设置
 # ---------------------
+
 st.set_page_config(page_title="PVL 预测系统 (PVL Prediction System)", layout="wide")
 st.title("PVL 预测系统 (PVL Prediction System)")
 st.write("🔬 本系统可加载 MRI 图像，手动勾画 ROI，提取影像特征并结合临床信息预测 PVL 风险。")
 st.write("This system allows you to load MRI, draw ROI, extract radiomics features, and predict PVL risk based on clinical data.")
+
+st.markdown(
+    """
+    <div style="border: 2px solid #ff4b4b; padding: 12px; border-radius: 10px; background-color: #2c2c2c;">
+        <strong style="color: #ff4b4b; font-size: 18px;">⚠️ Disclaimer / 免责声明</strong><br>
+        <span style="color: white;">
+        This web application is intended <strong>for research and educational purposes only</strong>.<br>
+        Please <strong>do not upload any real patient data</strong> containing Protected Health Information (PHI).<br>
+        All processing is performed client-side, and <strong>no data is stored or transmitted to a server</strong>.<br>
+        The tool is <strong>not approved for clinical use</strong>, and should not be used to guide medical decisions.<br><br>
+        本网站仅供科研与教学使用，请勿上传任何含有真实患者身份信息的影像资料。<br>
+        所有数据处理均在本地浏览器中完成，<strong>不会上传或存储到服务器</strong>。<br>
+        本工具<strong>尚未获得临床认证</strong>，不得用于指导实际医疗决策。
+        </span>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # ---------------------
 # 初始化状态变量
